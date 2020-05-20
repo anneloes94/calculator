@@ -4,7 +4,11 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.get("/", function(req, res){
-  res.send("<h1>Hello World</h1>")
+  res.sendFile(`${__dirname}/index.html`)
+})
+
+app.post("/", function(req, res){
+  res.send(`Great, you calculated something`)
 })
 
 app.listen(port, function(){
