@@ -24,7 +24,7 @@ app.get("/bmicalculator", function(req, res){
 app.post("/bmicalculator", function(req, res){
   const weightInKg = Number(req.body.weight)
   const heightInM = Number(req.body.height) / 100
-  res.send(`Your BMI is ${weightInKg / (heightInM * heightInM)}`)
+  res.send(`Your BMI is ${(weightInKg / (heightInM * heightInM)).toFixed(1)}`)
 })
 
 app.listen(port, function(){
